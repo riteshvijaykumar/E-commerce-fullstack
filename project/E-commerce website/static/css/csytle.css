@@ -1,0 +1,261 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+
+    font-family: "Poppins", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.menu a{
+    text-decoration: none;
+    padding: 10px;
+    color: black;
+}
+
+.navbar-toggle{
+    display: none;
+}
+
+.menu-box{
+    height: 100%;
+    width: 40%;
+    background-color: rgb(1, 1, 31);
+    position: fixed;
+    top: 0%;
+    left: -40%;
+    transition: 2s;
+}
+
+.menu-box a{
+    display: block;
+    color: white;
+    padding: 20px;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.menu-box i{
+    color: white;
+    position: absolute;
+    top: 1%;
+    right: 1%;
+}
+
+.header{
+    justify-content: center;
+    display: flex;
+    padding: 50px;
+    gap: 50px;
+}
+
+.header-button{
+    border: none;
+    background-color: black;
+    color: white;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+
+}
+
+.customerExp{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.review-box{
+
+    display: flex;
+    padding: 10px;
+    gap: 10px;
+
+}
+
+.box{
+    background-color: rgb(216, 216, 216);
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+}
+
+.new-arrivals{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.new-arrivals-containers{
+    position: relative;
+    flex-basis: 20%;
+}
+
+.new-arrivals button{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: none;
+    border-radius: 10px;
+    position: absolute;
+    top: 60%;
+    left: 18%;
+}
+
+.news-letter{
+    margin-top: 50px;
+}
+
+.news-letter h2{
+    padding: 10px;
+}
+
+.news-letter p{
+    padding: 10px;
+}
+
+.news-letter input{
+    width: 80%;
+    margin-top: 10px;
+    padding: 10px;
+    display: block;
+    border-color: black;
+    border-width: 3px;
+}
+
+.news-letter button{
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+}
+
+.bottom{
+    width: 100%;
+    background-color: black;
+    color: white;
+    margin-top: 30px;
+    padding: 40px;
+}
+
+.search-bar{
+    padding: 20px;
+}
+
+.search-bar input{
+    width: 90%;
+    border-width: 2px;
+    border-radius: 50px;
+    padding: 10px;
+    margin-top: 20px;
+    margin-left: 20px;
+    position: relative;
+    left: 40px;
+}
+
+.collection{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-left: 140px;
+}
+
+.collection-box{
+    flex-basis: 30%;
+    margin-top: 10px;
+    
+}
+
+.collection-box p{
+    position: relative;
+    right: 80px;
+    text-align: center;
+}
+
+.contactUs{
+    width: 60%;
+    height: 700px;
+    background-color: rgb(1, 1, 31);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    position: relative;
+    top: 20px;
+    left: 20%;
+}
+.contactForm{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.contactForm input{
+    width: 90%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.contactForm button{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    margin-top: 10px;
+}
+
+.contactForm textarea{
+    width: 90%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+
+@media screen and (max-width:700px) {
+    
+    .navbar-toggle{
+        display : flex;
+    }
+
+    .menu a{
+        display: none;
+    }
+
+    .header-image{
+        display: none;
+    }
+
+    .review-box{
+        flex-direction: column; 
+    }
+
+}
