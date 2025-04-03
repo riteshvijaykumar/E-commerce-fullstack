@@ -1,0 +1,175 @@
+<?php
+session_start();
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/fontawesome.min.css"
+        integrity="sha512-lauN4D/0AgFUGvmMR+knQnbOADyD/XuQ8VF18I8Ll0+TLvsujshyxvU+uzogmQbSq6qJd5jnUdYtK8ShxXMlSg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/solid.min.css"
+        integrity="sha512-bdqdas3Yr82pkTg5i0X1gcAT3tBXz/8H3J1ec7RyEKAvr/YiSCJNV2dnkukmL8CicjKb9rxmd+ILK8Kg2o2wvQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/project/E-commerce website/static/css/csytle.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <h1>Ritesh</h1>
+
+        <div class="menu">
+            <?php if (isset($_SESSION['username'])): ?>
+                <a class="navbar-links" href="/project/E-commerce website/templates/index.php">home</a>
+                <a class="navbar-links" href="/project/E-commerce website/templates/collection.html">collections</a>
+                <a class="navbar-links" href="/project/E-commerce website/templates/contact.html">contact us</a>
+                <span class="navbar-links"> <?php echo htmlspecialchars($_SESSION['username']); ?></span>
+                <a class="navbar-links" href="/project/E-commerce website/templates/logins/logout.php">logout</a>
+            <?php else: ?>
+                <a class="navbar-links" href="/project/E-commerce website/templates/index.php">home</a>
+                <a class="navbar-links" href="/project/E-commerce website/templates/collection.html">collections</a>
+                <a class="navbar-links" href="/project/E-commerce website/templates/contact.html">contact us</a>
+                <a class="navbar-links" href="/project/E-commerce website/templates/logins/login.html">login</a>
+            <?php endif; ?>
+        </div>
+        <div class="navbar-toggle" onclick="showmenubar()">
+            <p><i class="fa-solid fa-bars"></i></p>
+        </div>
+    </nav>
+
+    <div class="menu-box">
+        <div class="menu-bar-links">
+            <a href="/project/E-commerce website/templates/index.html"> home</a>
+            <a href="/project/E-commerce website/templates/collection.html"> collections</a>
+            <a href="/project/E-commerce website/templates/contact.html"> contact us</a>
+        </div>
+        <i class="fa fa-times" onclick="closemenubar()"></i>
+    </div>
+    <div class="header">
+        <div>
+            <h1>Level up your style</h1>
+            <p>with our collections</p>
+            <button class="header-button">shop now</button>
+        </div>
+
+        <div class="header-image">
+            <img src="/project/E-commerce website/static/image/fashion.png" width="300px" height="300px">
+        </div>
+
+    </div>
+
+    <div class="customerExp">
+        <h2>We Provide Best Customer Experience </h2>
+        <p>||we ensure that our customer have the best shopping Experience</p>
+    </div>
+
+    <div class="review-box">
+        <div class="box">
+            <i class="fa-regular fa-face-smile-beam"></i>
+            <h3>satisfaction Guarantee</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae incidunt dicta delectus deserunt et
+                nihil excepturi neque iure consequuntur autem.
+            </p>
+        </div>
+
+        <div class="box">
+            <i class="fa-regular fa-face-smile-beam"></i>
+            <h3>satisfaction Guarantee</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae incidunt dicta delectus deserunt et
+                nihil excepturi neque iure consequuntur autem.
+            </p>
+        </div>
+
+        <div class="box">
+            <i class="fa-regular fa-face-smile-beam"></i>
+            <h3>satisfaction Guarantee</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae incidunt dicta delectus deserunt et
+                nihil excepturi neque iure consequuntur autem.
+            </p>
+        </div>
+    </div>
+
+    <h2 style="padding: 10px;">New Arrivals</h2>
+
+    <div class="new-arrivals">
+        <div class="new-arrivals-containers">
+            <img src="/project/E-commerce website/static/image/fashion1.jpg" width="200px" height="200px">
+            <button class="img-button">Shop Now</button>
+        </div>
+
+        <div class="new-arrivals-containers">
+            <img src="/project/E-commerce website/static/image/fashion1.jpg" width="200px" height="200px">
+            <button class="img-button">Shop Now</button>
+        </div>
+
+        <div class="new-arrivals-containers">
+            <img src="/project/E-commerce website/static/image/fashion1.jpg" width="200px" height="200px">
+            <button class="img-button">Shop Now</button>
+        </div>
+
+        <div class="new-arrivals-containers">
+            <img src="/project/E-commerce website/static/image/fashion1.jpg" width="200px" height="200px">
+            <button class="img-button">Shop Now </button>
+        </div>
+
+    </div>
+
+    <h2 style="padding: 10px;">Most Wanted</h2>
+
+    <div class="new-arrivals">
+        <div class="new-arrivals-containers">
+            <img src="/project/E-commerce website/static/image/fashion.png" width="200px" height="200px">
+            <button class="img-button">Shop Now</button>
+        </div>
+
+        <div class="new-arrivals-containers">
+            <img src="/project/E-commerce website/static/image/fashion.png" width="200px" height="200px">
+            <button class="img-button">Shop Now</button>
+        </div>
+
+        <div class="new-arrivals-containers">
+            <img src="/project/E-commerce website/static/image/fashion.png" width="200px" height="200px">
+            <button class="img-button">Shop Now</button>
+        </div>
+
+        <div class="new-arrivals-containers">
+            <img src="/project/E-commerce website/static/image/fashion.png" width="200px" height="200px">
+            <button class="img-button">Shop Now</button>
+        </div>
+
+    </div>
+
+    <div class="news-letter">
+        <center>
+            <h2>Join Our News Letter</h2>
+            <p>sign up for our email newspaper to get exclusive discounts, Updates, and more</p>
+            <div>
+                <input type="search" class="input">
+            </div>
+            <button>Subscribe <i class="fa fa-arrow-right"></i></button>
+        </center>
+    </div>
+
+    <div class="bottom">
+        <h2>Ritesh</h2>
+        <p>Standard ipsum dolor sit amet consectetur adipisicing elit Molestias </p>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <p>@Ritesh.com</p>
+    </div>
+
+    <script src="/project/E-commerce website/static/js/java.js"></script>
+
+</body>
+
+</html>
