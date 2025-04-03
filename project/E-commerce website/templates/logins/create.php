@@ -3,8 +3,7 @@
     <head>
         <title>E-commerce</title>
         <style>
-
-            body{
+            body {
                 background-color: rgb(112, 189, 199);
                 font-family: sans-serif;
             }
@@ -15,11 +14,9 @@
                 background-color: white;
                 padding: 20px;
                 border-radius: 10px;
-                box-shadow:10px 10px 10px rgba(0, 0, 0, 0.1);
-                
+                box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
             }
-
-            .container button{
+            .container button {
                 background-color: rgb(112, 189, 199);
                 color: white;
                 border-radius: 5px;
@@ -29,8 +26,7 @@
                 border-width: 0px;
                 margin-top: 20px;
             }
-
-            .container input{
+            .container input {
                 border-radius: 5px;
                 border-width: 1px;
                 padding: 5px;
@@ -39,16 +35,15 @@
                 margin-left: 20px;
                 width: 200px;
             }
-            .container button{
+            .container button {
                 margin-left: 10px;
             }
-            h1{
+            h1 {
                 text-align: center;
             }
-            h4{
+            h4 {
                 margin-left: 20px;
             }
-
         </style>
     </head>
     <body>
@@ -56,35 +51,49 @@
             <form action="create.php" method="post">
                 <h1>CREATE ACCOUNT</h1>
                 <h4>username</h4>
-                <input type="text" name="username" placeholder="Username" class="user"><br><br>
+                <input type="text" name="username" placeholder="Username" class="user" required><br><br>
                 <h4>password</h4>
-                <input type="password" name="password" placeholder="Password" class="user"><br><br>
+                <input type="password" name="password" placeholder="Password" class="user" required><br><br>
                 <button type="submit">SUBMIT</button>
             </form>
         </div>
 
         <?php
-
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $servername = "localhost";
             $username = "root";
             $password = "";
             $dbname = "login";
 
+            // Create connection
             $conn = new mysqli($servername, $username, $password, $dbname);
 
+            // Check connection
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+            }
+
+            // Get form data
             $name = $_POST['username'];
             $pass = $_POST['password'];
 
-            $sql = "INSERT INTO users (username, password) VALUES ('$name', '$pass')";
+            // Insert data into the database
+            $sql = "INSERT INTO users (username, password) VALUES (?, ?)";
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("ss", $name, $pass);
 
-            if ($conn->query($sql) === TRUE) {
+            if ($stmt->execute()) {
                 echo "<script>console.log('New record created successfully')</script>";
                 echo "<script>alert('Account created successfully!')</script>";
                 echo "<script>console.log('Redirecting to login page...')</script>";
-                echo "<script>window.location.href = '/project/E-commerce website/templates/logins/login.php';</script>";
+                echo "<script>window.location.href = '/project/E-commerce website/templates/logins/login.html';</script>";
             } else {
-                echo "Error: " . $sql . "<br>" . $conn->error;
+                echo "Error: " . $stmt->error;
             }
+
+            $stmt->close();
+            $conn->close();
+        }
         ?>
     </body>
 </html>
